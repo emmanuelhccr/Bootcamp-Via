@@ -14,7 +14,6 @@ describe('US0003 - Funcionalidade: Perfil', () => {
     let bio = faker.random.words(5);
 
     beforeEach(() => {
-        cy.visit('login')
         cy.login('emmanuel@bootcampvia.com', 'teste@123')
         cy.visit('criar-perfil')
     });
@@ -50,14 +49,12 @@ describe('US0003 - Funcionalidade: Perfil', () => {
         //Expect result
         cy.get('#status').should('have.class',"Mui-error Mui-required")
     });
-
+    
     it('Deve editar perfil com sucesso', () => {
+        cy.visit('editar-perfil')
         cy.selectRandomStatus()
         cy.fillFieldsProfile(company, webSite, location, skills, github, bio)
         cy.get('[data-test="profile-submit"]').click()
-        cy.get('[data-test="dashboard-editProfile"]').click()
-        cy.get('[data-test="profile-submit"]').click()
-        cy.get('[data-test="dashboard-addExperience"]').click()
+        cy.get('[data-test="alert"]').should("have.text", "Perfil Atualizado")
     })
-        
 })

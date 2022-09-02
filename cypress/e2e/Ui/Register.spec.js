@@ -7,10 +7,6 @@ describe('US0002 - Funcionalidade: Cadastro', () => {
     let email = faker.internet.email(name);
     let password = faker.internet.password();
 
-    beforeEach(() => {
-        cy.visit('cadastrar')
-    });
-
     it('Deve fazer cadastro com sucesso', () => {
         cy.register(name, email, password)
 

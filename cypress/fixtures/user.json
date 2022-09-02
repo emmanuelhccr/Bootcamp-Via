@@ -1,3 +1,15 @@
-{
-    "cpf": "20687779839"
-}
+[
+    {
+        "email" : "emmanuel@bootcampvia.com",
+        "senha" : "teste@123"
+    },
+    {
+        "email" : "emmanuel@bootcampvia.com.br",
+        "senha" : "teste@123"
+    },
+    {
+        "email" : "emmanuel@bootcamp.com",
+        "senha" : "teste@123",
+        "perfil" : "admin"
+    }
+]

@@ -33,6 +33,7 @@ Cypress.Commands.add('navigate', (route) => {
 })
 
 Cypress.Commands.add("login", (email, password) => {
+    cy.visit('login')
     cy.get('[data-test="login-email"] > .MuiInputBase-root > .MuiInputBase-input').type(email)
     cy.get('[data-test="login-password"] > .MuiInputBase-root > .MuiInputBase-input').type(password)
     cy.get('[data-test="login-submit"]').click()
@@ -43,6 +44,7 @@ Cypress.Commands.add("logout", () => {
 })
 
 Cypress.Commands.add("register", (name, email, password) => {
+    cy.visit('cadastrar')
     cy.get('[data-test="register-name"] > .MuiInputBase-root > .MuiInputBase-input').type(name)
     cy.get('[data-test="register-email"] > .MuiInputBase-root > .MuiInputBase-input').type(email)
     cy.get('[data-test="register-password"] > .MuiInputBase-root > .MuiInputBase-input').type(password)
